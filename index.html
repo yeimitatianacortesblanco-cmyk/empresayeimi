@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impacto Económico de las Empresas con Propósito</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f9f9f9, #eef2f3);
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #1f3c88;
+      margin-bottom: 30px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    .item {
+      background: #fff;
+      border-radius: 16px;
+      margin: 20px 0;
+      padding: 20px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+    }
+    .item img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+    }
+    .content {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+    .content.show {
+      display: block;
+      opacity: 1;
+    }
+    strong {
+      color: #1f3c88;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Impacto Económico de las Empresas con Propósito</h1>
+
+    <div class="item" onclick="toggleContent(this)">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Empleo de calidad">
+      <div>
+        <strong>1. Generación de empleo de calidad</strong>
+        <div class="content">Ofrecen condiciones laborales dignas, evitando la precarización y fomentando la inclusión.</div>
+      </div>
+    </div>
+
+    <div class="item" onclick="toggleContent(this)">
+      <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Inversión sostenible">
+      <div>
+        <strong>2. Atracción de inversión sostenible</strong>
+        <div class="content">Cada vez más, los inversionistas priorizan fondos que aplican criterios ESG (Environmental, Social and Governance), lo que convierte a estas empresas en opciones atractivas (Eccles et al., 2014).</div>
+      </div>
+    </div>
+
+    <div class="item" onclick="toggleContent(this)">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135684.png" alt="Competitividad global">
+      <div>
+        <strong>3. Competitividad global</strong>
+        <div class="content">Al incorporar la sostenibilidad como parte de su estrategia, estas empresas logran diferenciarse en mercados saturados.</div>
+      </div>
+    </div>
+
+    <div class="item" onclick="toggleContent(this)">
+      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721296.png" alt="Innovación tecnológica">
+      <div>
+        <strong>4. Innovación tecnológica y social</strong>
+        <div class="content">Muchas desarrollan tecnologías limpias o modelos de economía circular que reducen costos y abren nuevos nichos de mercado.</div>
+      </div>
+    </div>
+
+    <div class="item" onclick="toggleContent(this)">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="Desafíos">
+      <div>
+        <strong>Desafíos</strong>
+        <div class="content">No todas las empresas, especialmente las pequeñas y medianas, cuentan con recursos suficientes para implementar estas transformaciones. Esto abre el debate sobre la equidad en la transición empresarial, pues el riesgo es que solo las grandes corporaciones puedan capitalizar el discurso del propósito, ampliando las brechas existentes.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sonidos -->
+  <audio id="openSound" src="https://www.soundjay.com/buttons/button-3.mp3" preload="auto"></audio>
+  <audio id="closeSound" src="https://www.soundjay.com/buttons/button-09.mp3" preload="auto"></audio>
+
+  <script>
+    function toggleContent(element) {
+      const content = element.querySelector('.content');
+      const openSound = document.getElementById('openSound');
+      const closeSound = document.getElementById('closeSound');
+
+      if (content.classList.contains('show')) {
+        content.classList.remove('show');
+        setTimeout(() => content.style.display = 'none', 600);
+        closeSound.play();
+      } else {
+        content.style.display = 'block';
+        setTimeout(() => content.classList.add('show'), 10);
+        openSound.play();
+      }
+    }
+  </script>
+</body>
+</html>
